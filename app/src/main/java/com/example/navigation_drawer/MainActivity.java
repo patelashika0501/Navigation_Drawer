@@ -32,11 +32,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView=findViewById(R.id.navigationview);
         toolbar=findViewById(R.id.toolbar);
 
-        //step-1 toolbar setup
-
         setSupportActionBar(toolbar);
-
-        //step-2 Drewer ne toggle krva
 
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(MainActivity.this,drawerLayout,
                 toolbar,R.string.OpenDrawer,R.string.CloseDrawer);
@@ -53,12 +49,14 @@ public class MainActivity extends AppCompatActivity {
 
                }else if(item.getItemId()==R.id.logout)
                {
-                   Toast.makeText(MainActivity.this, "LogOut", Toast.LENGTH_SHORT).show();
+                   loadFragment(new Fragment_Two());
+//                   Toast.makeText(MainActivity.this, "LogOut", Toast.LENGTH_SHORT).show();
                }
                else
                    if(item.getItemId()==R.id.login)
                {
-                   Toast.makeText(MainActivity.this, "Login", Toast.LENGTH_SHORT).show();
+                   loadFragment(new Fragment_Three());
+//                   Toast.makeText(MainActivity.this, "Login", Toast.LENGTH_SHORT).show();
                }
 
                    drawerLayout.closeDrawer(GravityCompat.START);
